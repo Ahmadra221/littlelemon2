@@ -44,6 +44,10 @@ class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     
+class BookingView(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticated] 
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
 @api_view()
 @permission_classes([IsAuthenticated])

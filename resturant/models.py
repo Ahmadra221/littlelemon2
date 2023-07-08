@@ -4,10 +4,10 @@ from django.db import models
 
 class Booking(models.Model):
     Name = models.CharField(max_length=255)
-    No_of_guests = models.IntegerField(max_length=6)
+    No_of_guests = models.SmallIntegerField()
     BookingDate = models.DateTimeField()
 
-    def __str__(self):
+    def get_booking(self):
         return self.Name
     
 class MenuItem(models.Model):
